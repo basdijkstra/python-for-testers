@@ -4,7 +4,7 @@ print("Hello world!")
 
 # Exercise 1.2
 # Create a new variable my_name and assign it your first name
-# Print "My name is <my_name" to the console
+# Print "My name is <my_name>" to the console
 my_name = "Bas"
 print("My name is " + my_name)
 

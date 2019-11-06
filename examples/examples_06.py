@@ -1,11 +1,17 @@
-class Car:
-    def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
+def read_file():
+    file = open("text_file.txt")
+    print(file.read())
+    file.close()
 
-    def print_info(self):
-        print("This is a %d %s %s" %(self.year, self.make, self.model))
+read_file()
 
-my_car = Car("Ford", "Focus", 2019)
-my_car.print_info()
+def append_to_file():
+    file = open("text_file.txt", "a")
+    file.write("\nAdding a new line to the file..")
+    file.close()
+
+    file = open("text_file.txt")
+    print(file.read())
+    file.close()
+
+append_to_file()

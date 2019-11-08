@@ -26,3 +26,26 @@ def separate_numbers_and_letters():
             print("letter")
 
 separate_numbers_and_letters()
+
+
+# Exercise 5.3
+# FizzBuzz time! This is a classic programming challenge.
+# Write a function fizzbuzz() that prints the numbers from
+# 1 to 100 to the console output, but:
+# - If the number can be divided by 3, print "Fizz"
+# - If the number can be divided by 5, print "Buzz"
+# - If the number can be divided by 3 AND by 5, print "FizzBuzz"
+def fizzbuzz():
+    counter = 1
+    while counter <= 100:
+        if counter % 15 == 0:
+            print("FizzBuzz")
+        elif counter % 5 == 0:
+            print("Buzz")
+        elif counter % 3 == 0:
+            print("Fizz")
+        else:
+            print(str(counter))
+        counter += 1
+
+fizzbuzz()

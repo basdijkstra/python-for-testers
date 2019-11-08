@@ -5,15 +5,9 @@
 # Write three random lines to the file and close it.
 # Reopen the file and print its contents.
 
-def write_and_read_file():
-    file = open("file.txt", "w")
-    file.write("Line 1\n")
-    file.write("Line 2\n")
-    file.write("Line 3")
-    file.close()
-
-    file = open("file.txt")
-    print(file.read())
-    file.close()
-
-write_and_read_file()
+# Exercise 6.2
+# Create a method append_to_file() that reopens the file you
+# created in the previous exercise and appends two more lines
+# to it. Print the contents to the console output once again
+# to check whether or not it is working. Think about placing
+# line breaks properly to make your file humanly readable!

@@ -17,3 +17,22 @@ def write_and_read_file():
     file.close()
 
 write_and_read_file()
+
+# Exercise 6.2
+# Create a method append_to_file() that reopens the file you
+# created in the previous exercise and appends two more lines
+# to it. Print the contents to the console output once again
+# to check whether or not it is working. Think about placing
+# line breaks properly to make your file humanly readable!
+
+def append_to_file():
+    file = open("file.txt", "a")
+    file.write("\nLine 4")
+    file.write("\nLine 5")
+    file.close()
+
+    file = open("file.txt")
+    print(file.read())
+    file.close()
+
+append_to_file()

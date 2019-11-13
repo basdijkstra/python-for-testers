@@ -1,6 +1,6 @@
 # Exercise 1.1
 # Print "Hello world!" to the console
-
+print("Hello world!")
 
 # Exercise 1.2
 # Create a new variable my_name and assign it your first name

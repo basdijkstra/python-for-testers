@@ -1,34 +1,24 @@
 import sqlite3
+import pytest
 
-users = [
-    (2, 'Adam', 'Johnson'),
-    (3, 'Rebecca', 'Jones'),
-    (4, 'Meryl', 'Black')
-]
 
-orders = [
-    (1, 'A sample order', 2),
-    (2, 'Another sample order', 3),
-    (3, 'Yet another sample order', 3)
-]
+@pytest.fixture
+def database_connection():
+    db_conn = sqlite3.connect("db_tests/examples/cars.db")
+    yield db_conn
+    db_conn.close()
 
-def create_database():
-    conn = sqlite3.connect("db_tests/examples/customers_orders.db")
-    cursor = conn.cursor()
-    cursor.execute("CREATE TABLE customer (id int, first_name text, last_name text)")
-    cursor.execute("INSERT INTO customer VALUES (1, 'John', 'Smith')")
-    cursor.executemany("INSERT INTO customer VALUES (?,?,?)", users)
-    cursor.execute("CREATE TABLE cust_order (orderid int, description text, customer int, FOREIGN KEY(customer) REFERENCES customer(id))")
-    cursor.executemany("INSERT INTO cust_order VALUES (?,?,?)", orders)
-    conn.commit()
-    conn.close()
 
-def query_database():
-    conn = sqlite3.connect("db_tests/examples/customers_orders.db")
-    cursor = conn.cursor()
-    cursor.execute("SELECT COUNT(cust_order.description) FROM cust_order INNER JOIN customer ON cust_order.customer = customer.id WHERE customer.first_name = 'Rebecca'")
-    print(cursor.fetchone())
-    conn.close()
+def test_query_database_check_number_of_makes_in_database(database_connection):
+    cursor = database_connection.cursor()
+    cursor.execute("SELECT COUNT(*) FROM make")
+    count = cursor.fetchone()
+    assert count[0] == 4
 
-create_database()
-query_database()
+
+def test_query_database_check_number_of_models_for_given_make(database_connection):
+    cursor = database_connection.cursor()
+    cursor.execute("SELECT model.model_name FROM model INNER JOIN "
+                   "make ON model.make_id = make.id WHERE make.name = ?", ['Maserati'])
+    model_name = cursor.fetchone()
+    assert model_name[0] == 'Quattroporte'

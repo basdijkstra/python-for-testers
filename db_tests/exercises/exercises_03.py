@@ -33,7 +33,7 @@ import sqlite3
 #         make_id - INTEGER NOT NULL
 #         model_name - TEXT NOT NULL
 #         first_year - INTEGER NOT NULL
-# The make_id field is a FOREIGN KEY referencing the id column in the 'model' table
+# The make_id field is a FOREIGN KEY referencing the id column in the 'make' table
 # 2. It inserts all values from 3.1 in the 'make' table
 # 3. It inserts all values from 3.2 in the 'model' table
 # 4. It commits all changes

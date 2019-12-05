@@ -23,6 +23,7 @@ def create_database():
     conn.commit()
     conn.close()
 
+
 def query_database():
     conn = sqlite3.connect("db_tests/examples/customers_orders.db")
     cursor = conn.cursor()
@@ -30,5 +31,8 @@ def query_database():
     print(cursor.fetchone())
     conn.close()
 
+
 create_database()
 query_database()
+
+

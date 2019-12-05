@@ -27,3 +27,4 @@ def test_use_xpath_for_more_sophisticated_checks():
     xml_tree = et.ElementTree(response_body_as_xml)
     address_children = xml_tree.findall(".//address/*")
     assert len(address_children) == 4
+

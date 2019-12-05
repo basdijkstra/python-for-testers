@@ -13,6 +13,7 @@ unique_number = str(uuid.uuid4())
 # 	</user>
 # </users>
 
+
 def use_xml_string_block():
 
     return """
@@ -25,6 +26,7 @@ def use_xml_string_block():
         </user>
     </users>    
     """
+
 
 def create_xml_object():
     users = et.Element('users')

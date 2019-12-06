@@ -11,7 +11,7 @@ def browser():
     driver.quit()
 
 
-def test_google_search(browser):
+def test_successful_google_search(browser):
     gsp = GoogleSearchPage(browser)
     gsp.load()
     gsp.perform_search("Maserati")

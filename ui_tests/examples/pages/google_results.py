@@ -4,7 +4,7 @@ from ui_tests.examples.helpers import SeleniumHelpers
 
 class GoogleResultsPage:
 
-    textfield_result_stats = [By.ID, "resultStats"]
+    textfield_result_stats = (By.ID, "resultStats")
 
     def __init__(self, browser):
         self.browser = browser

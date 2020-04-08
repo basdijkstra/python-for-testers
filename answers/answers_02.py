@@ -5,6 +5,7 @@
 def print_car_info_21():
     print("This is a 2019 Ford Focus")
 
+
 print_car_info_21()
 
 # Exercise 2.2
@@ -15,6 +16,7 @@ print_car_info_21()
 # to see if it works
 def print_car_info_22(year):
     print("This is a " + str(year) + " Ford Focus")
+
 
 print_car_info_22(2018)
 
@@ -27,6 +29,7 @@ print_car_info_22(2018)
 def print_car_info_23(year, make, model):
     print("This is a " + str(year) + " " + make + " " + model)
 
+
 print_car_info_23(2017, "Fiat", "Punto")
 
 # Exercise 2.4
@@ -37,6 +40,7 @@ print_car_info_23(2017, "Fiat", "Punto")
 # to see if it works
 def print_car_info_24(year, make, model="Punto"):
     print("This is a " + str(year) + " " + make + " " + model)
+
 
 print_car_info_24(2016, "Fiat")
 

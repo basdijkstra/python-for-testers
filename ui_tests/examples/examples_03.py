@@ -22,11 +22,14 @@ def test_successful_google_search(browser):
 
 
 def send_keys(driver, locator_strategy, locator, text_to_type):
-    element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((locator_strategy, locator)))
+    element = WebDriverWait(driver, 10).until(
+        ec.element_to_be_clickable((locator_strategy, locator))
+    )
     element.send_keys(text_to_type)
 
 
 def click(driver, locator_strategy, locator):
-    element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((locator_strategy, locator)))
+    element = WebDriverWait(driver, 10).until(
+        ec.element_to_be_clickable((locator_strategy, locator))
+    )
     element.click()
-

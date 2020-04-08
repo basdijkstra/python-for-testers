@@ -17,7 +17,10 @@ def test_successful_google_search(browser):
     browser.find_element_by_name("btnK").click()
     assert browser.title == "Maserati - Google zoeken"
     assert browser.find_element_by_id("resultStats").is_displayed() is True
-    assert browser.find_element_by_id("resultStats").text == "Ongeveer 5.480.000 resultaten"
+    assert (
+        browser.find_element_by_id("resultStats").text
+        == "Ongeveer 5.480.000 resultaten"
+    )
 
 
 def test_select_example(browser):

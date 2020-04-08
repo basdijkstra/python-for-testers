@@ -40,4 +40,3 @@ import pytest
 # 1. Create a new account with the specified balance and type
 # 2. Call the add_interest method with the given interest percentage
 # 3. Check that the actual new balance is equal to the one specified in the test_data_interest object
-

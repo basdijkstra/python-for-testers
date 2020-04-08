@@ -4,7 +4,7 @@ import pytest
 test_data = [
     ("Lamborghini", "Countach", 1988, False),
     ("Maserati", "Ghibli", 2018, True),
-    ("Ford", "Focus", 2015, True)
+    ("Ford", "Focus", 2015, True),
 ]
 
 

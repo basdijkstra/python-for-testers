@@ -5,6 +5,7 @@
 # Write three random lines to the file and close it.
 # Reopen the file and print its contents.
 
+
 def write_and_read_file():
     file = open("file.txt", "w")
     file.write("Line 1\n")
@@ -16,6 +17,7 @@ def write_and_read_file():
     print(file.read())
     file.close()
 
+
 write_and_read_file()
 
 # Exercise 6.2
@@ -24,6 +26,7 @@ write_and_read_file()
 # to it. Print the contents to the console output once again
 # to check whether or not it is working. Think about placing
 # line breaks properly to make your file humanly readable!
+
 
 def append_to_file():
     file = open("file.txt", "a")
@@ -34,5 +37,6 @@ def append_to_file():
     file = open("file.txt")
     print(file.read())
     file.close()
+
 
 append_to_file()

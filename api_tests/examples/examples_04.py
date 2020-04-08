@@ -29,18 +29,18 @@ def use_xml_string_block():
 
 
 def create_xml_object():
-    users = et.Element('users')
-    user = et.SubElement(users, 'user')
-    user_id = et.SubElement(user, 'id')
+    users = et.Element("users")
+    user = et.SubElement(users, "user")
+    user_id = et.SubElement(user, "id")
     user_id.text = unique_number
-    name = et.SubElement(user, 'name')
-    name.text = 'John Smith'
-    phone1 = et.SubElement(user, 'phone')
-    phone1.set('type', 'mobile')
-    phone1.text = '0612345678'
-    phone2 = et.SubElement(user, 'phone')
-    phone2.set('type', 'landline')
-    phone2.text = '0992345678'
+    name = et.SubElement(user, "name")
+    name.text = "John Smith"
+    phone1 = et.SubElement(user, "phone")
+    phone1.set("type", "mobile")
+    phone1.text = "0612345678"
+    phone2 = et.SubElement(user, "phone")
+    phone2.set("type", "landline")
+    phone2.text = "0992345678"
 
     return users
 
@@ -48,7 +48,7 @@ def create_xml_object():
 def test_send_xml_using_xml_string_block():
     xml = use_xml_string_block()
     response = requests.post("http://httpbin.org/anything", data=xml)
-    print(response.json()["data"])
+    print(response.request.body)
     assert response.status_code == 200
 
 
@@ -56,5 +56,5 @@ def test_send_xml_using_element_tree():
     xml = create_xml_object()
     xml_as_string = et.tostring(xml)
     response = requests.post("http://httpbin.org/anything", data=xml_as_string)
-    print(response.json()["data"])
+    print(response.request.body)
     assert response.status_code == 200

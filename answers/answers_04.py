@@ -3,9 +3,10 @@
 # Use a while loop
 def count_to_ten():
     counter = 1
-    while(counter < 11):
+    while counter < 11:
         print(str(counter))
         counter += 1
+
 
 count_to_ten()
 
@@ -17,6 +18,7 @@ def list_my_cars():
     my_cars = ["Ford", "Alfa Romeo", "Maserati"]
     for car in my_cars:
         print(car)
+
 
 list_my_cars()
 
@@ -33,7 +35,8 @@ def list_my_cars_with_colors():
     cars_and_colors["Maserati"] = "black"
     for car in cars_and_colors:
         print("My " + car + " is " + cars_and_colors[car])
-        print("My %s is %s" %(car, cars_and_colors[car]))
+        print("My %s is %s" % (car, cars_and_colors[car]))
+
 
 list_my_cars_with_colors()
 

@@ -13,7 +13,7 @@ def create_json_object():
                     "id": unique_number,
                     "name": "John Smith",
                     "phone_1": "0612345678",
-                    "phone_2": "0992345678"
+                    "phone_2": "0992345678",
                 }
             }
         ]
@@ -22,5 +22,5 @@ def create_json_object():
 
 def test_send_json_with_unique_number_check_status_code():
     response = requests.post("http://httpbin.org/post", json=create_json_object())
-    print(response.json()["data"])
+    print(response.request.body)
     assert response.status_code == 200

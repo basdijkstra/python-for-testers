@@ -6,8 +6,9 @@
 def filter_the_ones():
     funny_fruit = "b1an11a11n1111a"
     for character in funny_fruit:
-        if character != '1':
+        if character != "1":
             print(character)
+
 
 filter_the_ones()
 
@@ -24,6 +25,7 @@ def separate_numbers_and_letters():
             print("number")
         else:
             print("letter")
+
 
 separate_numbers_and_letters()
 
@@ -47,5 +49,6 @@ def fizzbuzz():
         else:
             print(str(counter))
         counter += 1
+
 
 fizzbuzz()

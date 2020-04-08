@@ -1,5 +1,6 @@
 import requests
 
+
 # Exercise 3.1
 # Create a function create_post() that returns an
 # object that follows this structure:

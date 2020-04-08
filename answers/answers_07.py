@@ -33,6 +33,7 @@
 # 4. Print the resulting balance
 # Is the outcome different? (Hint: it should be...)
 
+
 class Account:
     def __init__(self, balance, type):
         self.balance = balance
@@ -46,7 +47,8 @@ class Account:
 
     def add_interest(self, interest_rate):
         if self.type == "savings":
-            self.balance *= (1 + interest_rate)
+            self.balance *= 1 + interest_rate
+
 
 my_account = Account(1000, "savings")
 my_account.withdraw(500)

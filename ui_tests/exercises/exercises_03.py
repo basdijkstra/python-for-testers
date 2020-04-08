@@ -14,6 +14,7 @@ def browser():
     yield driver
     driver.quit()
 
+
 # Exercise 3.1
 # Rewrite the remaining send_keys() and click() actions in this test
 # so that they now use the helper methods defined below
@@ -33,13 +34,18 @@ def test_successful_loan_request(browser):
 
 
 def send_keys(driver, locator_strategy, locator, text_to_type):
-    element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((locator_strategy, locator)))
+    element = WebDriverWait(driver, 10).until(
+        ec.element_to_be_clickable((locator_strategy, locator))
+    )
     element.send_keys(text_to_type)
 
 
 def click(driver, locator_strategy, locator):
-    element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((locator_strategy, locator)))
+    element = WebDriverWait(driver, 10).until(
+        ec.element_to_be_clickable((locator_strategy, locator))
+    )
     element.click()
+
 
 # Exercise 3.2
 # Add a helper method that performs the select action, but now waits properly for the

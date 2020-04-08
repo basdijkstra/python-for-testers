@@ -1,6 +1,7 @@
 import requests
 import xml.etree.ElementTree as et
 
+
 # Exercise 4.1
 # Create a function create_xml_body_from_string()
 # that returns a docstring (with triple double quotes)
@@ -36,4 +37,3 @@ import xml.etree.ElementTree as et
 # Exercise 4.4
 # Repeat Exercise 4.2, but now use the XML document created in Exercise 4.3
 # Don't forget to convert the XML document to a string before sending it!
-

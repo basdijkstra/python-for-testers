@@ -16,4 +16,3 @@ print("Hello world!")
 # Ask the user (nicely!) to input their city of residence
 # Store the answer in a new variable my_city and
 # use it to print "I live in <my_city>"
-

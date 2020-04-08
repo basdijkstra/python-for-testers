@@ -9,10 +9,10 @@ import sqlite3
 # (3, Ferrari, 1939)
 # (4, Lamborghini, 1963)
 car_makes = [
-    (1, 'Fiat', 1899),
-    (2, 'Maserati', 1914),
-    (3, 'Ferrari', 1939),
-    (4, 'Lamborghini', 1963)
+    (1, "Fiat", 1899),
+    (2, "Maserati", 1914),
+    (3, "Ferrari", 1939),
+    (4, "Lamborghini", 1963),
 ]
 
 # Exercise 3.2
@@ -25,11 +25,11 @@ car_makes = [
 # (4, 2, Quattroporte, 1963)
 # (5, 3, Testarossa, 1984)
 car_models = [
-    (1, 1, 'Punto', 1993),
-    (2, 1, 'Tipo', 1988),
-    (3, 1, 'Ritmo', 1978),
-    (4, 2, 'Quattroporte', 1963),
-    (5, 3, 'Testarossa', 1984)
+    (1, 1, "Punto", 1993),
+    (2, 1, "Tipo", 1988),
+    (3, 1, "Ritmo", 1978),
+    (4, 2, "Quattroporte", 1963),
+    (5, 3, "Testarossa", 1984),
 ]
 
 # Exercise 3.3
@@ -53,12 +53,17 @@ car_models = [
 def create_database():
     conn = sqlite3.connect("db_tests/answers/cars.db")
     cursor = conn.cursor()
-    cursor.execute("CREATE TABLE make (id INTEGER PRIMARY KEY NOT NULL, name TEXT NOT NULL, founded_in INTEGER NOT NULL)")
-    cursor.execute("CREATE TABLE model (id INTEGER PRIMARY KEY NOT NULL, make_id INTEGER NOT NULL, model_name TEXT NOT NULL, first_year INTEGER NOT NULL, FOREIGN KEY(make_id) REFERENCES make(id))")
+    cursor.execute(
+        "CREATE TABLE make (id INTEGER PRIMARY KEY NOT NULL, name TEXT NOT NULL, founded_in INTEGER NOT NULL)"
+    )
+    cursor.execute(
+        "CREATE TABLE model (id INTEGER PRIMARY KEY NOT NULL, make_id INTEGER NOT NULL, model_name TEXT NOT NULL, first_year INTEGER NOT NULL, FOREIGN KEY(make_id) REFERENCES make(id))"
+    )
     cursor.executemany("INSERT INTO make VALUES (?,?,?)", car_makes)
     cursor.executemany("INSERT INTO model VALUES (?,?,?,?)", car_models)
     conn.commit()
     conn.close()
+
 
 # Exercise 3.4
 # To check your work, create a function query_database(make_name) that performs the following
@@ -69,11 +74,15 @@ def create_database():
 def query_database(make_name):
     conn = sqlite3.connect("db_tests/answers/cars.db")
     cursor = conn.cursor()
-    cursor.execute("SELECT model.model_name FROM model INNER JOIN make ON model.make_id = make.id WHERE make.name = ?", [make_name])
+    cursor.execute(
+        "SELECT model.model_name FROM model INNER JOIN make ON model.make_id = make.id WHERE make.name = ?",
+        [make_name],
+    )
     print(cursor.fetchall())
     conn.close()
+
 
 # Exercise 3.5
 # Call the method from 3.3 first, then the method from 3.4 and check the results in the console
 create_database()
-query_database('Fiat')
+query_database("Fiat")

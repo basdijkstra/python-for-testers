@@ -3,7 +3,9 @@ def read_file():
     print(file.read())
     file.close()
 
+
 read_file()
+
 
 def append_to_file():
     file = open("text_file.txt", "a")
@@ -13,5 +15,6 @@ def append_to_file():
     file = open("text_file.txt")
     print(file.read())
     file.close()
+
 
 append_to_file()

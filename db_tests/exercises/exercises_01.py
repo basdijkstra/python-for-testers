@@ -34,4 +34,3 @@ import sqlite3
 #    Make sure to use safe parameters
 # 3. Assert that the first_name is equal to 'Meryl'
 #    and that the last name is equal to 'Black'
-

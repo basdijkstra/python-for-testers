@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as et
 import requests
 
+
 # Exercise 5.1
 # Write a test that does the following:
 # Perform a GET to http://parabank.parasoft.com/parabank/services/bank/accounts/12345

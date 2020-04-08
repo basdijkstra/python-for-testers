@@ -11,6 +11,7 @@ def browser():
     yield driver
     driver.quit()
 
+
 # Exercise 2.1
 # Extend this test with the following actions:
 # 1. Select the menu item 'Request Loan' from the side menu bar

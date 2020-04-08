@@ -11,13 +11,13 @@ class MyListener(stomp.ConnectionListener):
 
 
 conn = stomp.Connection()
-conn.set_listener('', MyListener())
+conn.set_listener("", MyListener())
 conn.start()
-conn.connect('admin', 'password', wait=True)
+conn.connect("admin", "password", wait=True)
 
-conn.subscribe(destination='/queue/test', id="1", ack='auto')
+conn.subscribe(destination="/queue/test", id="1", ack="auto")
 
-conn.send(body='<body>text</body>', destination='/queue/test')
+conn.send(body="<body>text</body>", destination="/queue/test")
 
 time.sleep(2)
 conn.disconnect()

@@ -23,7 +23,10 @@ def test_successful_login(browser):
     send_keys(browser, By.NAME, "username", "john")
     send_keys(browser, By.NAME, "password", "demo")
     click(browser, By.XPATH, "//input[@value='Log In']")
-    assert get_element_text(browser, By.XPATH, "//h1[@class='title']") == "Accounts Overview"
+    assert (
+        get_element_text(browser, By.XPATH, "//h1[@class='title']")
+        == "Accounts Overview"
+    )
 
 
 # Exercise 3.2
@@ -49,20 +52,30 @@ def test_successful_loan_request(browser):
 # If all went well, we don't need the methods defined below anymore..
 # Remove them and rerun your tests to see if that's true
 def send_keys(driver, locator_strategy, locator, text_to_type):
-    element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((locator_strategy, locator)))
+    element = WebDriverWait(driver, 10).until(
+        ec.element_to_be_clickable((locator_strategy, locator))
+    )
     element.send_keys(text_to_type)
 
 
 def click(driver, locator_strategy, locator):
-    element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((locator_strategy, locator)))
+    element = WebDriverWait(driver, 10).until(
+        ec.element_to_be_clickable((locator_strategy, locator))
+    )
     element.click()
 
 
 def select(driver, locator_strategy, locator, value_to_select):
-    element = Select(WebDriverWait(driver, 10).until(ec.element_to_be_clickable((locator_strategy, locator))))
+    element = Select(
+        WebDriverWait(driver, 10).until(
+            ec.element_to_be_clickable((locator_strategy, locator))
+        )
+    )
     element.select_by_visible_text(value_to_select)
 
 
 def get_element_text(driver, locator_strategy, locator):
-    element = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((locator_strategy, locator)))
+    element = WebDriverWait(driver, 10).until(
+        ec.visibility_of_element_located((locator_strategy, locator))
+    )
     return element.text

@@ -8,11 +8,7 @@ import pytest
 #    1000 -    100 -         900
 #    1000 -    999 -           1
 #    1000 -   1000 -           0
-test_data_withdraw = [
-    (1000, 100, 900),
-    (1000, 999, 1),
-    (1000, 1000, 0)
-]
+test_data_withdraw = [(1000, 100, 900), (1000, 999, 1), (1000, 1000, 0)]
 
 
 # Exercise 3.2
@@ -37,7 +33,7 @@ test_data_withdraw_extended = [
     (1000, 100, 900),
     (1000, 999, 1),
     (1000, 1000, 0),
-    (1000, 1001, 1000)
+    (1000, 1001, 1000),
 ]
 
 # What I think? That it's a bad idea to try and get this to work :)
@@ -54,7 +50,7 @@ test_data_withdraw_extended = [
 test_data_interest = [
     (1000, "savings", 0.01, 1010),
     (1000, "checking", 0.02, 1000),
-    (1000, "savings", 0, 1000)
+    (1000, "savings", 0, 1000),
 ]
 
 
@@ -64,7 +60,9 @@ test_data_interest = [
 # 1. Create a new account with the specified balance and type
 # 2. Call the add_interest method with the given interest percentage
 # 3. Check that the actual new balance is equal to the one specified in the test_data_interest object
-@pytest.mark.parametrize("initial_balance, account_type, interest, new_balance", test_data_interest)
+@pytest.mark.parametrize(
+    "initial_balance, account_type, interest, new_balance", test_data_interest
+)
 def test_interest(initial_balance, account_type, interest, new_balance):
     my_account = robust_account.Account(initial_balance, account_type)
     my_account.add_interest(interest)

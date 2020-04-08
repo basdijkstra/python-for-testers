@@ -7,7 +7,7 @@ class Car:
         self.year = year
 
     def get_info(self):
-        return "This is a %d %s %s" %(self.year, self.make, self.model)
+        return "This is a %d %s %s" % (self.year, self.make, self.model)
 
 
 try:

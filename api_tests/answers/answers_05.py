@@ -66,7 +66,7 @@ def test_use_xpath_for_more_sophisticated_checks():
     response_body_as_xml = et.fromstring(response.content)
     xml_tree = et.ElementTree(response_body_as_xml)
     savings_accounts = xml_tree.findall(".//account/type[.='SAVINGS']")
-    assert len(savings_accounts) > 1
+    assert len(savings_accounts) > 0
     accounts_with_incorrect_customer_id = xml_tree.findall(
         ".//account/customerId[!.='12212']"
     )

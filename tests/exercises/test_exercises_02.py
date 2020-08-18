@@ -14,4 +14,3 @@ import pytest
 # raised by the error (this should be equal to
 # "Cannot withdraw 1250 from account with balance of 1000"
 # and that the balance is intact (i.e, is still equal to 1000)
-

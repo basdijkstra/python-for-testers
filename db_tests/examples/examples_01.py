@@ -2,7 +2,7 @@ import sqlite3
 
 
 def test_query_database_check_number_of_makes_in_database():
-    conn = sqlite3.connect("db_tests/examples/cars.db")
+    conn = sqlite3.connect("cars.db")
     cursor = conn.cursor()
     cursor.execute("SELECT COUNT(*) FROM make")
     count = cursor.fetchone()
@@ -12,7 +12,7 @@ def test_query_database_check_number_of_makes_in_database():
 
 
 def test_query_database_check_number_of_models_for_given_make():
-    conn = sqlite3.connect("db_tests/examples/cars.db")
+    conn = sqlite3.connect("cars.db")
     cursor = conn.cursor()
     cursor.execute(
         "SELECT model.model_name FROM model INNER JOIN "

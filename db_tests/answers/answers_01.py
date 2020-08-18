@@ -41,7 +41,7 @@ def test_query_database_check_number_of_customers_with_address_in_database():
 #    Make sure to use safe parameters
 # 3. Assert that the number is equal to 1
 def test_query_database_check_number_of_customers_living_in_detroit():
-    conn = sqlite3.connect("db_tests/answers/crm.db")
+    conn = sqlite3.connect("crm.db")
     cursor = conn.cursor()
     cursor.execute(
         "SELECT COUNT(customer.id) FROM customer INNER JOIN address ON customer.id = address.customer_id WHERE address.city = ?",

@@ -35,7 +35,7 @@ def list_my_cars_with_colors():
     cars_and_colors["Maserati"] = "black"
     for car in cars_and_colors:
         print("My " + car + " is " + cars_and_colors[car])
-        print("My %s is %s" % (car, cars_and_colors[car]))
+        print(f"My {car} is {cars_and_colors[car]}")
 
 
 list_my_cars_with_colors()

@@ -61,5 +61,5 @@ except ValueError:
     print("That doesn't work...")
 try:
     my_other_account.deposit(-100)
-except:
+except ValueError:
     print("That doesn't work either...")

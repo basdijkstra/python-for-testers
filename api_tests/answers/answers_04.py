@@ -45,6 +45,7 @@ def test_send_xml_body_from_docstring_check_status_code_is_200_and_name_is_corre
         headers={"Content-Type": "application/xml"},
         data=create_xml_body_from_string(),
     )
+    print(response.request.body)
     assert response.status_code == 200
     assert response.headers["Content-Type"] == "application/xml"
 

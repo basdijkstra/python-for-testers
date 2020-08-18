@@ -26,6 +26,8 @@ print_car_info_22(2018)
 # "This is a <year> <make> <model>" to the console output
 # Call the function afterwards using the parameter values (2017, Fiat, Punto)
 # to see if it works
+
+
 def print_car_info_23(year, make, model):
     print("This is a " + str(year) + " " + make + " " + model)
 

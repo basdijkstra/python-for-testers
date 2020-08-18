@@ -18,8 +18,8 @@ filter_the_ones()
 # the characters in this string and for each of them, print whether
 # it is a letter (print "letter") or a number (print "number")
 # Use isdigit() and an if-else construction
-def separate_numbers_and_letters():
-    alphanumeric = "pr0gr4mm1ng"
+def separate_numbers_and_letters(alphanumeric):
+    # alphanumeric = "pr0gr4mm1ng"
     for character in alphanumeric:
         if character.isdigit():
             print("number")
@@ -27,7 +27,7 @@ def separate_numbers_and_letters():
             print("letter")
 
 
-separate_numbers_and_letters()
+separate_numbers_and_letters("pr0gra4mm1ng")
 
 
 # Exercise 5.3

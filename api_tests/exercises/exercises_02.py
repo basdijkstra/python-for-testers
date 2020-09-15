@@ -21,7 +21,7 @@ import pytest, requests, csv
 # us,90210,Beverly Hills
 # it,50123,Firenze
 # ca,Y1A,Whitehorse
-# Place this .csv file in the answers folder of the project
+# Place this .csv file in the exercises folder of the project
 
 
 # Exercise 2.4

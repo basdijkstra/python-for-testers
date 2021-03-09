@@ -39,7 +39,7 @@ def test_get_location_data_check_place_name(country_code, zip_code, expected_pla
 # and creates and returns a test data object from the data in the .csv file
 def read_data_from_csv():
     test_data_zip_from_csv = []
-    with open("answers/test_data_zip.csv", newline="") as csvfile:
+    with open("test_data_zip.csv", newline="") as csvfile:
         data = csv.reader(csvfile, delimiter=",")
         for row in data:
             test_data_zip_from_csv.append(row)

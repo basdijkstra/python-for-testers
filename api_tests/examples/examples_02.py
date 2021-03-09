@@ -14,7 +14,7 @@ def test_get_data_for_user_check_name(userid, expected_name):
 
 def read_data_from_csv():
     test_data_users_from_csv = []
-    with open("examples/test_data_users.csv", newline="") as csvfile:
+    with open("test_data_users.csv", newline="") as csvfile:
         data = csv.reader(csvfile, delimiter=",")
         for row in data:
             test_data_users_from_csv.append(row)

@@ -13,7 +13,7 @@ import requests
 
 # Exercise 1.3
 # Perform a GET request to http://api.zippopotam.us/us/90210
-# Check that the response body encoding is not set (equal to None)
+# Check that the response body encoding is equal to 'utf-8'
 
 
 # Exercise 1.4

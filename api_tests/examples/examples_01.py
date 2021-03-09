@@ -3,7 +3,7 @@ import requests
 
 def test_get_user_with_id_1_check_status_code_equals_200():
     response = requests.get("https://jsonplaceholder.typicode.com/users/1")
-    assert response.status_code == 200
+    assert response.status_code == 201
 
 
 def test_get_user_with_id_1_check_content_type_equals_json():
